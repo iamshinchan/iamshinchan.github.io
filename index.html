@@ -1,15 +1,97 @@
-<html>
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<!--<![endif]-->
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title-->
     <title>CodeForTechie</title>
+
+    <!--Fonts-->
+    <link rel="stylesheet" href="./css/font-awesome.css">
+
+    <!--General Style-->
+    <link rel="stylesheet" href="./css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+
+    <!--Color Style-->
+    <link rel="stylesheet" href="./css/violet.css" type="text/css">
+
 </head>
 
 <body>
-    <div style="font-size: larger;
-        font-weight: 900;
-        text-align: center;">
-        This domain is for sale.
+
+    <!-- Content -->
+
+    <div id="table-wrapper">
+        <div class="container">
+            <div id="row-content">
+                <div id="content-wrapper">
+
+                    <div class="col-md-12 vertical-aligned-wrapper">
+                        <div class="col-md-12 col-sm-12 col-xs-12 vertical-aligned-element text-left">
+                            <div id="content">
+
+                                <h1>This domain is for sale!</h1>
+
+                                <h2>https://www.codefortechie.com</h2>
+
+                                <div class="text-left opacity-80">Sale will be end in:</div>
+                                <!-- Counter -->
+                                <h3 id="demo"><span id="day"></span><span id="hr"></span><span id="min"></span><span
+                                        id="sec"></span></h3>
+                                <h4>Hurry and make an offer!</h4>
+                                <h3>Current offer: $1000</h3>
+                                <a href="https://www.namecheap.com/domains/registration/results/?domain=codefortechie.com"
+                                    target="_blank" class="button rounded animate in" data-toggle="modal"
+                                    data-target="#modal-contact"><span>Make an offer &nbsp;$</span></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Feb 5, 2021 05:08:00").getTime();
+
+        var blink = document.getElementById('sec');
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById("day").innerHTML = days + "d ";
+            document.getElementById("hr").innerHTML = hours + "h ";
+            document.getElementById("min").innerHTML = minutes + "m ";
+            document.getElementById("sec").innerHTML = seconds + "s ";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+            blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+        }, 1000);
+    </script>
 </body>
 
 </html>
